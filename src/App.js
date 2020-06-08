@@ -1,33 +1,12 @@
 import React from "react";
-
-// function App() {
-//   // const greeting = "Hi, Dom!";
-//   // const dom = <h1 className="foo">{greeting}</h1>;
-//   // return <h1>Hello World!</h1>;
-//   // return dom;
-//   return (
-//     <React.Fragment>
-//       <label htmlFor="bar">bar</label>
-//       <input
-//         type="text"
-//         // onClick={() => {
-//         onChange={() => {
-//           console.log("I am clicked!");
-//         }}
-//       />
-//     </React.Fragment>
-//   );
-// }
-
-// function App() {
-//   return React.createElement("div", null, "Hello World!!");
-// }
+import PropTypes from "prop-types";
 
 const App = () => {
   const profiles = [
     { name: "Aya", age: 25 },
     { name: "Cookie", age: 5 },
     { name: "NoName" },
+    { name: "41", age: 5 },
   ];
   return (
     <div>
@@ -46,8 +25,9 @@ const User = (props) => {
   );
 };
 
-User.defaultProps = {
-  age: 1,
+User.propTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number.isRequired,
 };
 
 export default App;
