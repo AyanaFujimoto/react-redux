@@ -15,7 +15,7 @@ class EventsIndex extends Component {
       <tr key={event.id}>
         <td>{event.id}</td>
         <td>{event.title}</td>
-        <td>{(event, body)}</td>
+        <td>{event.body}</td>
       </tr>
     ));
   }
@@ -25,13 +25,14 @@ class EventsIndex extends Component {
     return (
       <React.Fragment>
         <table>
-          <thread>
+          <thead>
             <tr>
               <th>ID</th>
               <th>Title</th>
               <th>Body</th>
             </tr>
-          </thread>
+          </thead>
+          <tbody>{this.renderEvents()}</tbody>
         </table>
       </React.Fragment>
     );
